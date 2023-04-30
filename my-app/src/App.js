@@ -10,8 +10,10 @@ import Footer from './footer';
 import Tshirts from './Products';
 import Details from './details';
 import ShoppingCart from './shoppingCart';
+import { useState } from 'react';
 function App() {
-  const Cart=[];
+  
+  const [Cart, setCart] = useState([]);
   return (
 
     <div className='App'>
@@ -32,3 +34,6 @@ function App() {
 
 export default App;
 export const Cart = [];
+export const setCart = (newCart) => {
+  Cart = newCart;
+}
