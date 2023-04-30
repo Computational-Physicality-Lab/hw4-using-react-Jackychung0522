@@ -1,0 +1,22 @@
+.cartProductBlock{
+    position:relative;
+    left: 40px;
+    
+}
+#mycart{
+    font-size:48px;
+    margin: 20px;
+}
+/* hr{
+    width:50%;
+} */
+.cartProductName{
+    position:relative;
+    left: 40px;
+    
+    margin: 20px;
+    font-size: 36px;
+}
+.cartProductBlock{
+    display: flex;
+}
