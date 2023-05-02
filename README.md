@@ -5,7 +5,8 @@ This is the starter code of [2023-Programming User Interface Homework](https://h
 - 姓名:鍾昀諺
 - deploy 的網站連結:目前有wanring無法deploy，還請助教clone下來做測試，在my-app資料夾裡做npm start即可測試。
 - 你所實作的加分作業項目：無
-- 重要：請討論使用 React 實作與作業一中使用純 html/css/JavaScript 實作有何不同?
+* 問題
+- 請討論使用 React 實作與作業一中使用純 html/css/JavaScript 實作有何不同?
 Ans:react的實作跟純 html/css/JavaScript不同的地方在於，react是以component為單位的，方便重複使用，然後他的路徑是寫在AppRoute，要使用的時候再去抓取路徑，有別於純html，一個html就是一個頁面的概念。
 - 哪一個比較方便與為什麼？哪一個比較容易理解如何操作與為什麼？
 Ans:在一開始我會覺得純javascrpit比較直觀，到後期學會了react的用法，我會覺得他在傳遞資料和頁面上比較方便，而且對於龐大的程式也比較有架構。所以我覺得純html/css/JavaScript容易理解，但react比較方便。
