@@ -6,6 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.T-SHIRTS {
+  display: flex;
+  flex-wrap: wrap;
+}
 header{
   display: flex;
   justify-content: space-between;
@@ -24,7 +28,7 @@ footer{
   left: 0;
   width: 100%;
   
-  padding-bottom: 20px;
+
 } 
 .footerStyle{
   margin-left: 80px;

@@ -105,9 +105,9 @@ function ShoppingCart(props) {
                                         ))}
                                     </DropdownButton>
          
-                                    <p>Color: {item.color}</p>
-                                    <p>Size: {item.size}</p>
-                                    <p>Price (each): {item.price}</p>
+                                    <p>Color: <span className="redword">{item.color}</span></p>
+                                    <p>Size: <span className="redword">{item.size}</span></p>
+                                    <p>Price (each): <span className="redword">{item.price}</span></p>
                                     <div >
                                         <button className="cartButton" onClick={() => handleRemoveItem(item.id)}>Remove</button>
                                     </div>
@@ -124,9 +124,9 @@ function ShoppingCart(props) {
         <div className="total">
         <div className="totalBlock">
             <h3>Order Summary</h3>
-            <p>Subtotal: ${subTotalPrice}</p>
-            <p>Est.Shipping: $6.95</p>
-            <p>Total: ${totalPrice}</p>
+            <p>Subtotal: <span className="redword">${subTotalPrice}</span></p>
+            <p>Est.Shipping: <span className="redword">$6.95</span></p>
+            <p>Total:  <span className="redword">${totalPrice}</span></p>
             <Link to={routes.NotImplement}>
                 <button className="cartButton">Sign in and checkout</button>
             </Link>

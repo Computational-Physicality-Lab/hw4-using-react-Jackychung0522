@@ -9,6 +9,7 @@ import './index.css'
 
 function Header() {
   const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("cart") || "[]"));
+  const [cartQuantity, setCartQuantity] = useState(0);
   let sum=0;
   
 
