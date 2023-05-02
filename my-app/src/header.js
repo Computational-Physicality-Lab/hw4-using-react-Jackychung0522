@@ -28,7 +28,7 @@ function Header() {
   useEffect(() => {
     let sum = 0;
     for (let i = 0; i < cart.length; i++) {
-      sum += cart[i].quantity;
+      sum += parseInt(cart[i].quantity);
     }
     setTotalQuantity(sum);
   }, [cart]);

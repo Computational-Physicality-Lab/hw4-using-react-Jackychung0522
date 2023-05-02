@@ -34,6 +34,7 @@ function Details  (props)  {
         price: selectedButton.price,
         quantity :selectedQuantity,
         id: uuidv4(),
+        side:"front"
     }
     const cart = sessionStorage.getItem("cart");
     let newCart = [];

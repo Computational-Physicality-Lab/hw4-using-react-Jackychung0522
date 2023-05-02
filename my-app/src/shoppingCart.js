@@ -1,6 +1,6 @@
 import React from 'react';
 import './shoppingCart.css'
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import routes from './AppRouter';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
@@ -10,16 +10,25 @@ function ShoppingCart(props) {
     //     console.log(Cart[i].quantity);
     // }
     const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("cart") || "[]"));
+    const [totalQuantity, setTotalQuantity] = useState(0);
 
-
-
+    useEffect(() => {
+        let sum = 0;
+        for (let i = 0; i < cart.length; i++) {
+        sum += parseInt(cart[i].quantity);
+        }
+        setTotalQuantity(sum);
+    }, [cart]);
+   
     for (let i = 0; i < cart.length; i++) {
         console.log(cart[i].quantity);
         console.log(cart[i].price);
     }
     
     const selectedButton = JSON.parse(localStorage.getItem('selectedButton'))
-    
+    function handleContinueShopping(){
+        localStorage.clear();
+    }
     
     function handleQuantityChange(id, quantity) {
         const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -34,6 +43,7 @@ function ShoppingCart(props) {
         });
         sessionStorage.setItem("cart", JSON.stringify(updatedCart));
         setCart(updatedCart);
+        window.location.reload();
     }
     function handleRemoveItem(id) {
         const cart = sessionStorage.getItem("cart");
@@ -64,7 +74,7 @@ function ShoppingCart(props) {
 
             <div className="shoppingCart">
                 <div className="mycart">
-                    <div id='mycart'>My Cart</div>
+                    <div id='mycart'>My Cart({totalQuantity})</div>
 
                 </div>
                 {/* <hr /> */}
@@ -79,7 +89,7 @@ function ShoppingCart(props) {
                             <div className="cartProductBlock" key={index}>
                                 <div className="cartProductName">
                                     <p>{item.name}</p>
-                                    <img src={`shirt_images/${item.name}-${item.color}-front.png`} />
+                                    <img src={selectedButton.colors[item.color]?.front || 'default-image-path'} />
                                 </div>
                                 <div className="cartProductInfor">
                                     <DropdownButton
@@ -123,7 +133,7 @@ function ShoppingCart(props) {
         </div>
         <div className='continueShopping'>
             <Link to={routes.Tshirts}>
-                <button className="cartButton">Continue Shopping</button>
+                <button className="cartButton" onClick={()=>handleContinueShopping()}>Continue Shopping</button>
             </Link>
         </div>
 
