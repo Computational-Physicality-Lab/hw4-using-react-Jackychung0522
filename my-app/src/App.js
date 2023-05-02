@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import routes from './AppRouter';
 import HomePage from './HomePage';
 import NotImplement from './NotImplement';
@@ -10,10 +10,9 @@ import Footer from './footer';
 import Tshirts from './Products';
 import Details from './details';
 import ShoppingCart from './shoppingCart';
-import { useState } from 'react';
 function App() {
   
-  const [Cart, setCart] = useState([]);
+  
   return (
 
     <div className='App'>
@@ -34,6 +33,3 @@ function App() {
 
 export default App;
 export const Cart = [];
-export const setCart = (newCart) => {
-  Cart = newCart;
-}

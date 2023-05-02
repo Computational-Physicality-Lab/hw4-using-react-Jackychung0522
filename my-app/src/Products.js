@@ -8,8 +8,12 @@ function Tshirts(){
           {shirts.map((shirt, index) => (
             <div key={index} className="divForBlocks">
               <div className="block">
-                <Link to={routes.Details} className="imgbutton" onClick={() => localStorage.setItem('selectedButton', JSON.stringify(shirt))}>
-                  <img src={shirt.colors.white.front} />
+                <Link to={routes.Details} className="imgbutton" onClick={() => {localStorage.setItem('selectedButton', JSON.stringify(shirt));  localStorage.setItem(
+                        'selectedButton',
+                        JSON.stringify(shirt)
+                      );
+                      localStorage.setItem('name', JSON.stringify(shirt.name));} }>
+                  <img src={shirt.colors.white.front } alt="White shirt front view"/>
                 </Link>
                 <p className="productname">{shirt.name}</p>
                 <p className="colornumber">
@@ -35,7 +39,9 @@ function Tshirts(){
                         'selectedButton',
                         JSON.stringify(shirt)
                       );
+                      localStorage.setItem('name', JSON.stringify(shirt.name));
                     }}
+                    
                   >
                     See Page
                   </Link>

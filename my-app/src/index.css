@@ -23,7 +23,8 @@ footer{
   bottom: 0;
   left: 0;
   width: 100%;
-  margin-top: 50px ;
+  
+  padding-bottom: 20px;
 } 
 .footerStyle{
   margin-left: 80px;
@@ -46,6 +47,7 @@ h1{
 .h1text{
   font-size: 18pt;
   margin:auto;
+  font-family: "PMingLiU", sans-serif;
 }
 .section{
   display: flex;
@@ -155,6 +157,7 @@ h1{
 
 a:hover{
   color: aliceblue; 
+  text-shadow: 1px 1px #ccc;
   
 }
 a{
@@ -231,3 +234,4 @@ a{
   text-align: center;
   margin-top: 10px;
 }
+

@@ -5,7 +5,7 @@ function NotImplement(){
     return (
         <div className="notImplement">
           
-            <div class="backgroud">
+            <div className="backgroud">
               
               <img src={scotty} alt="image_description"></img>
               Oops!this page doesn't exist yet... how about the shirt from the last page?

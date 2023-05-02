@@ -1,52 +1,60 @@
 import React from 'react';
 import logo from './assets/images/logo.png';
-import cart from './assets/images/cart.png';
+import { useState,useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
+import cartimage from './assets/images/cart.png';
 import routes from './AppRouter';
 import './index.css'
 
 function Header() {
+  const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("cart") || "[]"));
+  let sum=0;
+  
+
+  
     const headerStyle={
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'};
-    const cartStyle={
-        width: '80px',
-        height: '60px',
-        marginLeft: '50px',
-        border:'none',
-        backgroundColor: '#c51230',
-        display:'inline-flex',
-    }
+    
     const headerTitle={
         fontSize: '40px',
         fontFamily:'Catamaran',
         marginLeft: '50px'
     }
-    
+    const [totalQuantity, setTotalQuantity] = useState(0);
+
+  useEffect(() => {
+    let sum = 0;
+    for (let i = 0; i < cart.length; i++) {
+      sum += cart[i].quantity;
+    }
+    setTotalQuantity(sum);
+  }, [cart]);
 
     return (
         
       <header style={headerStyle} >
         
-        <Link to={routes.home} class="my-link">
-        <div class="logo">
+        <Link to={routes.home} className="my-link" >
+        <div className="logo">
           <img src={logo}alt="image_description"/>
         </div>
       </Link>
         
           
-        <div class="headerTitle">
+        <div className="headerTitle">
           <p style={headerTitle}>Scotty Shirts U Illustrate(SSUI)</p>
         </div>
-        <div class="shoppingCar"  >
-          <Link class="shoppingCar" to={routes.ShoppingCart} >
+        <div className="shoppingCar"  >
+          <Link className="shoppingCar" to={routes.ShoppingCart} >
             
-            <img src={cart} alt="image_description"  class="car" />
-              <p>0</p>
+            <img src={cartimage} alt="image_description"  className="car" />
+              
             
           </Link> 
-
+          <p>{totalQuantity}</p>
         </div>
         
       </header>

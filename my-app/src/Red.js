@@ -6,7 +6,7 @@ function Red(){
         height: '30px'
     }
     return (
-    <div class="red" style={red}>
+    <div className="red" style={red}>
           
     </div>
     );

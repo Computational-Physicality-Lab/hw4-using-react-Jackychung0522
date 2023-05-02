@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import shirts from './shared/shirts'
 import { Link } from "react-router-dom";
 import routes from './AppRouter';
-import ShoppingCart from "./shoppingCart";
-import { Cart } from './App';
+import { v4 as uuidv4 } from 'uuid';
 function Details  (props)  {
   const [shirt, setShirt] = useState(JSON.parse(localStorage.getItem("selectedButton")));
   const [color, setColor] = useState("white");
@@ -22,10 +20,11 @@ function Details  (props)  {
     setSelectedSize(e.target.value);
   };
   function handleAddToCartClick ()  {
+    
     const    shirtObject= JSON.parse(localStorage.getItem('shirt'))
      const   color= JSON.parse(localStorage.getItem('color'))
      const   selectedButton= JSON.parse(localStorage.getItem('selectedButton'))
-     const   side= JSON.parse(localStorage.getItem('side'))
+     //const   side= JSON.parse(localStorage.getItem('side'))
      const   size= JSON.parse(localStorage.getItem('size'))
      const  quantity= JSON.parse(localStorage.getItem('quantity'))
      const shirt = {
@@ -33,15 +32,25 @@ function Details  (props)  {
         color: color,
         size: size,
         price: selectedButton.price,
-        quantity :selectedQuantity
+        quantity :selectedQuantity,
+        id: uuidv4(),
     }
-    Cart.push(shirt);
+    const cart = sessionStorage.getItem("cart");
+    let newCart = [];
+  
+    if (cart) {
+        newCart = JSON.parse(cart);
+    }
+  
+    newCart.push(shirt);
+    sessionStorage.setItem("cart", JSON.stringify(newCart));
+    //Cart.push(shirt);
     if (selectedSize === "Size") {
       return;
     }
     
     
-        
+    
   }
   const shirtarray = ["beepboop", "car", "plaid", "melon"];
   const dataArray = Object.keys(selectedButton.colors);
@@ -153,6 +162,7 @@ function Details  (props)  {
           ) : (
             <Link to={routes.ShoppingCart}>
               <button onClick={handleAddToCartClick} id="addToCart">Add To Cart</button>
+              
             </Link>
           )}
         </div>

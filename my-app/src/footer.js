@@ -1,54 +1,54 @@
 import React from 'react';
 import './index.css'
 import { Link } from 'react-router-dom';
-import { Routes,Switch, Route, Redirect } from 'react-router-dom';
+
 import routes from './AppRouter';
-import NotImplement from './NotImplement';
+
 function Footer() {
     
     return (
         <footer>
-        <div class="footerStyle">
-          <div class="footerText">
+        <div className="footerStyle">
+          <div className="footerText">
             <p>
             
-              <Link to={routes.NotImplement} class="my-link">
+              <Link to={routes.NotImplement} className="my-link" style={{ color: "gray" ,textDecoration: "none"}}>
                     Contact Us
               </Link>
            
               
             </p>
           </div>
-          <div class="footerText">
+          <div className="footerText">
             <p>
-            <Link to={routes.NotImplement} class="my-link">
+            <Link to={routes.NotImplement} className="my-link"style={{ color: "gray",textDecoration: "none"}}>
                 
                 Site Map
               </Link>
             </p>
           </div>
-          <div class="footerText">
+          <div className="footerText">
             <p>
-            <Link to={routes.NotImplement} class="my-link">
+            <Link to={routes.NotImplement} className="my-link"style={{ color: "gray" ,textDecoration: "none"}}>
                 Privacy Policy
               </Link>
             </p>
           </div>
-          <div class="footerText">
+          <div className="footerText">
             <p>
-            <Link to={routes.NotImplement} class="my-link">
+            <Link to={routes.NotImplement} className="my-link"style={{ color: "gray" ,textDecoration: "none"}}>
                 Careers
               </Link>
             </p>
           </div>
-          <div class="footerText">
+          <div className="footerText">
             <p>
-            <Link to={routes.NotImplement} class="my-link">
+            <Link to={routes.NotImplement} className="my-link"style={{ color: "gray" ,textDecoration: "none" }}>
                 Reviews
               </Link>
             </p>
           </div>
-          <div class="footerText">
+          <div className="footerText">
             <p>
               Designed by Jacky
             </p>

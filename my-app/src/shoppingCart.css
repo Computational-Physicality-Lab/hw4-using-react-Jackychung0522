@@ -1,8 +1,11 @@
 .cartProductBlock{
     position:relative;
     left: 40px;
+    border-top: 1px solid red;
     
 }
+.mycart{ position:relative;
+    left: 40px;}
 #mycart{
     font-size:48px;
     margin: 20px;
@@ -33,6 +36,7 @@
   }
   .cartProductInfor{
     margin-left: 100px;
+    margin-top: 20px;
   }
   .totalBlock {
    
@@ -54,6 +58,9 @@
   .continueShopping{
     
     margin-top: 50px;
+    position:absolute;
+    top: 300px;
+    right: 75px;
   }
   .cartButton{
     border: 0px;
@@ -68,10 +75,20 @@
     color: aliceblue; 
   }
   .emptyCart{
-    font-size: 20px;
+    font-size: 30px;
     font-family: '';
   }
-  
+  #quantity-dropdown
+  {
+    margin-left: 20px;
+    border-radius: 10px;
+    width: 150px;
+    height:50px ;
+    border: 1px solid #c51230;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+  }
   
   
   
