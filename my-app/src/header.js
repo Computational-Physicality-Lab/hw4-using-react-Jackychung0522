@@ -8,9 +8,9 @@ import routes from './AppRouter';
 import './index.css'
 
 function Header() {
-  const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("cart") || "[]"));
-  const [cartQuantity, setCartQuantity] = useState(0);
-  let sum=0;
+  const [cart] = useState(JSON.parse(sessionStorage.getItem("cart") || "[]"));
+  //const [cartQuantity, setCartQuantity] = useState(0);
+ 
   
 
   
@@ -55,7 +55,7 @@ function Header() {
               
             
           </Link> 
-          <p>{totalQuantity}</p>
+          <p><span className="totalQuantity">{totalQuantity}</span></p>
         </div>
         
       </header>

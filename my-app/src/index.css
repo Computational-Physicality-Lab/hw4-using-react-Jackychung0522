@@ -239,3 +239,9 @@ a{
   margin-top: 10px;
 }
 
+.totalQuantity{
+  font-size: 20px;
+  color: gray;
+  display: inline-flex;
+  
+}

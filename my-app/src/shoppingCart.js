@@ -89,7 +89,7 @@ function ShoppingCart(props) {
                             <div className="cartProductBlock" key={index}>
                                 <div className="cartProductName">
                                     <p>{item.name}</p>
-                                    <img src={selectedButton.colors[item.color]?.front || 'default-image-path'} />
+                                    <img src={selectedButton.colors[item.color]?.front || 'default-image-path'}  alt=""/>
                                 </div>
                                 <div className="cartProductInfor">
                                     <DropdownButton

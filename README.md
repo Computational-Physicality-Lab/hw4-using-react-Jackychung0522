@@ -3,7 +3,7 @@
 This is the starter code of [2023-Programming User Interface Homework](https://hackmd.io/@akairisu/ByGFeGdZh)
 
 - 姓名:鍾昀諺
-- deploy 的網站連結:目前有wanring無法deploy，還請助教clone下來做測試，在my-app資料夾裡做npm start即可測試。
+- deploy 的網站連結:目前有warning無法deploy，還請助教clone下來做測試，在my-app資料夾裡做npm start即可測試。
 - 你所實作的加分作業項目：無
 
 問題:
